@@ -1,0 +1,170 @@
+
+#top {
+    position: relative;
+    background-color: #dddddd;
+    color: yellowgreen;
+    
+    margin: 2px 2px 10px 0px;
+}
+
+#bottom {
+    position: relative;
+    background-color: #c2dfef;
+    padding: 5px;
+    margin: 10px 0px 0px 0px;
+}
+
+#left {
+    float: left;
+    background-color: #42861A;
+    padding: 1%;
+    left: 100px;
+    width: 250px;
+}
+
+#right {
+    float: right;
+    background-color: #ece3a5;
+    padding: 10%;
+    width: 150px;
+}
+
+.center_content {
+    position: relative;
+    background-color: #dddddd;
+    left: 40px;
+    padding: 60%;
+}
+
+.left_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin-left: 290px;
+    
+}
+
+.right_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin: 0px 170px 0px 170px;
+}
+
+#top a:link, #top a:visited {
+  color: white;
+  font-weight : bold;
+  text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+  color: black;
+  font-weight : bold;
+  text-decoration : underline;
+}
+
+
+nav{
+    grass: font-effect-grass;
+}
+img {
+width: 100%;
+height: auto;
+}
+.btn{
+    position: absolute;
+    margin-left:20px;
+    margin-right: 10px;
+    width: 300px;
+    
+}
+.pasw{
+    margin-left:20px;
+}
+.mapa{
+  width: 290px;
+  margin-left:4000px;
+}
+.mapi{
+    margin-left:4000px;
+  width: 290px;  
+}
+.logowak{
+    margin-top: 10px;
+    width: 300px;
+    height: 100px;
+    margin-left: 50px;
+}
+.logowakanda{
+    margin-top: -50px;
+    width: 250px;
+    height: 100px;
+    margin-left: 960px;
+}
+.pasw5{
+    margin-left: 900px;
+}
+
+.timev{
+   position: relative;
+    margin-left: 100px;
+    width: 400px;
+}
+.imagesView{
+     position: relative;
+     background-color: #edeaea;
+        top: -300px;
+        width: 920px;
+        height: 700;
+        margin-left: 490px;
+}
+.pnl{
+   background-color: #cce8e7; 
+}
+.pnl1{
+   width: 28%; 
+   margin-bottom: 40px;
+   margin-bottom: -1500px;
+}
+.pnl2{
+   width: 28%;
+   margin-bottom: -1200px;
+   margin-left: 500px;
+}
+.pnl3{
+   width: 28%;
+    margin-top: 10px;
+   margin-left: 1000px;
+}
+.pnl0{
+    background: -webkit-linear-gradient(63deg, #151515 5px, transparent 5px) 0 5px,
+            -webkit-linear-gradient(243deg, #151515 5px, transparent 5px) 10px 0px,
+            -webkit-linear-gradient(63deg, #222 5px, transparent 5px) 0px 10px,
+            -webkit-linear-gradient(243deg, #222 5px, transparent 5px) 10px 5px,
+            -webkit-linear-gradient(0deg, #1b1b1b 10px, transparent 10px),
+            -webkit-linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background: -moz-linear-gradient(63deg, #151515 5px, transparent 5px) 0 5px,
+            -moz-linear-gradient(243deg, #151515 5px, transparent 5px) 10px 0px,
+            -moz-linear-gradient(63deg, #222 5px, transparent 5px) 0px 10px,
+            -moz-linear-gradient(243deg, #222 5px, transparent 5px) 10px 5px,
+            -moz-linear-gradient(0deg, #1b1b1b 10px, transparent 10px),
+            -moz-linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+            linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+            linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+            linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+            linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+            linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-size: 20px 20px;
+background-color: #131313;
+-pie-background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px / 20px,
+                 linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px / 20px,
+                 linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px / 20px,
+                 linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px / 20px,
+                 linear-gradient(90deg, #1b1b1b 10px, transparent 10px) 0 0 / 20px,
+                 linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424)
+                 0 0 / 20px #131313;
+behavior: url(/pie/PIE.htc);
+}
+.menu{
+    width: 250px;
+}
+

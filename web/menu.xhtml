@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./resources/defaultTemplate.xhtml">
+
+            <ui:define name="top">
+                top
+            </ui:define>
+
+            <ui:define name="left">
+                <h3>MENU</h3>
+                <h:form>
+                    <p:menu class="menu">
+                        <p:submenu label="COMPTES" class="menu">
+                            <p:menuitem value="Consultatiion" action="#{menuView.listeCompteClient()}" update="messages" ajax="false" />
+                            <p:menuitem value="Relevé en ligne" action="#{menuView.listeOperations()}" update="messages" ajax="false" />
+                        </p:submenu>
+                        <p:submenu label="VIREMENTS PRELEVEMENT">
+                            <p:menuitem value="Crediter Compte" action="#{menuView.crediterCompte()}" update="messages" ajax="false"/>
+                            <p:menuitem value="virement" action="#{menuView.virement()}" update="messages" ajax="false"/>
+                        </p:submenu>
+                        <p:submenu label="GESTION BUDGET">
+                            <p:menuitem value="Depenses et revenues" action="#{menuView.imageDepense()}" update="messages" ajax="false"/>
+                        </p:submenu>
+                        
+                    </p:menu>
+                </h:form>
+
+
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form>
+                    <f:view>
+                        <h:form>
+                            <h1><h:outputText value="List"/></h1>
+                            <p:dataTable value="#{loginManagedBean.clientConnectedByLogin.listeComptes}" var="item">
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Id"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.id}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="NomProprietaire"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.nomProprietaire}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Solde"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.solde}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="NumeroCompte"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.numeroCompte}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="LibeleCompte"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.libeleCompte}"/>
+                                </p:column>
+                                
+                                
+                                <p:column >
+                                <f:facet name="header">
+                                    <h:outputText value="Opérations éffectuées"/>
+                                </f:facet>
+                                <p:commandButton value="voir détails"
+                                                 action="#{comptesManagedBean.ShowOperation(item.id)}"
+                                                 icon="pi pi-folder-open"
+                                                />
+                               
+                            </p:column>
+                            </p:dataTable>
+                        </h:form>
+                    </f:view>
+
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

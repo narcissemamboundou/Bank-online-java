@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+
+      >
+    <h:head>
+        <link rel="stylesheet" href="loginCss.css"/>
+        <h:outputStylesheet library="css" name="loginCss.css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic|Varela+Round' rel='stylesheet'/>
+
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <style type="text/css">
+            .ui-analog-clock {
+                width: 200px;
+            }
+        </style>     
+
+        <!--   <nav>
+               <a href="#">Personal |</a> 
+               <a href="#">Compagny |</a> 
+               <a href="#">Product |</a> 
+               <a href="#">About Us</a>
+               <a href="#">Product |</a>
+               <a href="#">Product |</a>
+           </nav>-->
+        <h:form>
+            <p:commandLink id="ps0"  style="margin-right:20px;">
+                <h:outputText class="pasw1" value="Personal |" />
+            </p:commandLink>
+            <p:commandLink id="ps2"  style="margin-right:20px;">
+                <h:outputText class="pasw2" value="Compagny |" />
+            </p:commandLink>
+            <p:commandLink id="ps3"  style="margin-right:20px;">
+                <h:outputText class="pasw3" value="Product |" />
+            </p:commandLink>
+            <p:commandLink id="ps4"  style="margin-right:20px;">
+                <h:outputText class="pasw4" value="About Us " />
+            </p:commandLink>
+
+            <p:commandLink id="ps5"  style="margin-right:20px;">
+                <h:outputText class="pasw5" value="Anglais |" />
+            </p:commandLink>
+            <p:commandLink id="ps6"  style="margin-right:20px;">
+                <h:outputText class="pasw6" value="Espagnol |" />
+            </p:commandLink>
+
+        </h:form>
+
+        <form>
+            <p>
+                <img src="images/bourse.PNG" alt="Smiley face" width="10" height="50"/>
+                <img src="images/wakandaLogo.png" class="logowak" alt="logo du wakanda" width="10" height="50"/>
+                <img src="images/wakasastr.png" class="logowakanda" alt="logo du wakanda" width="10" height="50"/>
+             
+            </p>
+        </form>
+        <h:form>
+
+
+            <fieldset>
+                <legend>CONNEXION WAKANDA BANK INC</legend>
+                <h:panelGrid columns="2" id="matchGrid" cellpadding="5">
+                    <!--<p:outputLabel for="@next" value="Nom d'utilisateur:" />-->
+                    <p:inputText class="mapa" required="true" placeholder="user Name" value="#{loginManagedBean.mail}" /> 
+
+                    <!--<h:outputText value="Mot de passe: " />-->
+                    <p:password id="inlineFeedback" class="mapi" placeholder="user password" value="#{loginManagedBean.motDePasse}" feedback="true" inline="true" />
+
+                </h:panelGrid>
+                <!--<p:spacer height="" />-->
+                <br/><br/>
+
+                <p:messages id="messages" showDetail="true" autoUpdate="true" />
+                <!--<p:commandButton update="matchGrid" class="btn"  value="Connexion"
+                                 action="#{loginManagedBean.loginClient()}"
+                                 immediate="true"/> -->
+                <h:commandButton  class="btn"  value="Connexion"
+                                 action="#{loginManagedBean.loginClient()}"
+                                 /> 
+                <p:commandLink id="ps" update="matchGrid" style="margin-right:20px;">
+                    <br> <h:outputText class="pasw" value="Mot de passe oublié ?" /></br>
+                </p:commandLink>
+
+                <p:separator/>
+                <br/><br/>
+                <!-- <p:messages id="messages" showDetail="true" autoUpdate="true" />-->
+                <h:commandButton  value="Besoin de vibranium ? Ouvrez un compte chez nous"
+                                 action="#{loginManagedBean.creercompteByClient()}" 
+                                 class="botnCreate"
+                                />
+                <br/><br/>
+                <p:clock pattern="HH:mm:ss dd.MM.yyyy" mode="server" class="timev" />
+
+            </fieldset>            
+                <p:contentFlow value="#{imagesViewMB.images}" var="images" class="imagesView">
+                    <p:graphicImage name="images/#{images}" styleClass="content"  />
+                   
+                    <div class="caption">#{image}</div>
+                </p:contentFlow>
+                 
+        </h:form>
+        
+         <br/><br/>
+        <h:form>
+            <p:panel header="Rester connecter a wakanda banque!" class="pnl0">	
+                <h:panelGrid id="footer" columns="3" columnClasses="grid,grid,grid">
+                    <h:panelGrid columns="1" columnClasses="label, value">
+                        <p:panel header="WAKANDA BANK CORPORATION!" class="pnl1">
+                            <h:outputText value="Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit." /><br/>
+                        </p:panel>
+                        <h:panelGrid columns="1" columnClasses="label, value">
+                            <p:panel header="CONTACT" class="pnl2">
+                                <h:outputLabel value="WAKANDA , NY 10012, WAK" />
+                                <h:outputLabel value="wakandaBank*.wak" /><br/>
+                                <h:outputLabel value="+ 00W 234 567 88" /><br/>
+                                <h:outputLabel value="+ 00W 450 860 88" /><br/>
+                            </p:panel>
+                            <h:panelGrid columns="3" columnClasses="label, value">
+                                <p:panel header="PRODUIT" class="pnl3">
+                                    <h:outputLabel value="CARYTE GOLD" /><br/>
+                                    <h:outputLabel value="TRADING" /><br/>
+                                    <h:outputLabel value="FINTECH" /><br/>
+                                    <h:outputLabel value="CRYPTO-CURRENCY" /><br/>
+                                </p:panel>
+                            </h:panelGrid>
+                        </h:panelGrid>	
+                    </h:panelGrid>	
+                </h:panelGrid>
+
+            </p:panel>	
+
+        </h:form>
+      
+    </h:body>
+</html>
+
+

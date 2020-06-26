@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!--<h:outputStylesheet name="./css/default.css"/>-->
+        <h:outputStylesheet library="css" name="default.css" />
+        <h:outputStylesheet library="css" name="cssLayout.css" />
+        <!--<h:outputStylesheet name="./css/cssLayout.css"/>-->
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+
+        <div id="top" class="top">
+            <ui:insert name="top">Top</ui:insert>
+                  <style type="text/css">
+            .ui-analog-clock {
+                width: 200px;
+            }
+        </style>     
+
+      
+        <h:form>
+            <p:commandLink id="ps0"  style="margin-right:20px;">
+                <h:outputText class="pasw1" value="Personal |" />
+            </p:commandLink>
+            <p:commandLink id="ps2"  style="margin-right:20px;">
+                <h:outputText class="pasw2" value="Compagny |" />
+            </p:commandLink>
+            <p:commandLink id="ps3"  style="margin-right:20px;">
+                <h:outputText class="pasw3" value="Product |" />
+            </p:commandLink>
+            <p:commandLink id="ps4"  style="margin-right:20px;">
+                <h:outputText class="pasw4" value="About Us " />
+            </p:commandLink>
+
+            <p:commandLink id="ps5"  style="margin-right:20px;">
+                <h:outputText class="pasw5" value="Anglais |" />
+            </p:commandLink>
+            <p:commandLink id="ps6"  style="margin-right:20px;">
+                <h:outputText class="pasw6" value="Espagnol |" />
+            </p:commandLink>
+            
+            <h:commandButton accesskey="true" value="DECONNECTION" actionListener="#{loginManagedBean.logout()}"/>
+            
+
+        </h:form>
+
+
+        <form>
+            <p>
+                <img src="images/bourse.PNG" alt="Smiley face" width="10" height="50"/>
+                <img src="images/wakandaLogo.png" class="logowak" alt="logo du wakanda" width="10" height="50"/>
+                <img src="images/wakasastr.png" class="logowakanda" alt="logo du wakanda" width="10" height="50"/>
+             
+            </p>
+        </form>
+        </div>
+        <div>
+            <div id="left">
+                <ui:insert name="left">Left</ui:insert>
+            </div>
+            <div id="content" class="left_content">
+                <ui:insert name="content">Content</ui:insert>
+            </div>
+        </div>
+    </h:body>
+
+</html>

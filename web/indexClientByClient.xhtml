@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <link rel="stylesheet" href="loginCss.css"/>
+        <h:outputStylesheet library="css" name="loginCss.css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic|Varela+Round' rel='stylesheet'/>
+    </h:head>
+    
+    <style type="text/css">
+    .label {
+        width:20%;
+        padding:4px;
+    }
+ 
+    .value {
+        width:80%;
+        padding:4px;
+    }
+ 
+    .grid {
+        width:100%;
+    }
+ 
+    .error {
+        color: red;
+    }
+ 
+    .outputLabel {
+        font-weight: bold;
+    }
+ 
+    .grid {
+        width:33%;
+        padding:4px;
+    }
+</style>
+    
+    <h:body>
+        Creation d'utilisateur et un compte
+        
+        <form>
+            <p>
+                <img src="images/bourse.PNG" alt="Smiley face" width="10" height="50"/>
+                <img src="images/wakandaLogo.png" class="logowak" alt="logo du wakanda" width="10" height="50"/>
+                <img src="images/wakasastr.png" class="logowakanda" alt="logo du wakanda" width="10" height="50"/>
+             
+            </p>
+        </form>
+        
+        <f:view>
+
+
+            <h:form>
+
+                <p:growl id="growl" sticky="true" showDetail="true"/>
+
+                <p:wizard flowListener="#{clientManagedBean.onFlowProcess}">
+                    <p:tab id="personal" title="Personal">
+                        <p:panel header="Personal Details">
+                            <p:messages />
+                            <h:panelGrid columns="2" columnClasses="label, value">
+                                <h:outputText value="NOM *" />
+                                <p:inputText value="#{clientManagedBean.nom}" required="true" label="NOM"/>
+
+                                <h:outputText value="Prenom *" />
+                                <p:inputText value="#{clientManagedBean.prenom}" required="true" label="Prenom"/>
+
+                            </h:panelGrid>
+                        </p:panel>
+                    </p:tab>
+
+                    <p:tab id="address" title="Address">
+                        <p:panel header="Address Details">
+                            
+                            <h:panelGrid columns="2" columnClasses="label, value">
+
+                                <h:outputText value="Ville *" />
+                                <p:inputText value="#{clientManagedBean.adresse}" 
+                                             required="true" 
+                                             label="ville"
+                                             />
+
+                            </h:panelGrid>
+                        </p:panel>
+                    </p:tab>
+
+                    <p:tab id="contact" title="Contact">
+                        <p:panel header="Contact Information">
+                            <p:messages />
+                            <h:panelGrid columns="2" columnClasses="label, value">
+                                <h:outputText value="Email: *" />
+                                <p:inputText value="#{clientManagedBean.mail}" required="true" label="Email"/>
+
+                                <h:outputText value="Phone: " />
+                                <p:inputText value="#{clientManagedBean.numeroTelephone}" required="true" label="Phone"/>
+
+                            </h:panelGrid>
+                        </p:panel>
+                    </p:tab>
+
+                    <p:tab id="confirm" title="Confirmation">
+                        <p:panel header="Confirmation">
+                            <h:panelGrid id="confirmation" columns="3" columnClasses="grid,grid,grid">
+                                <h:panelGrid columns="2" columnClasses="label, value">
+                                    <h:outputText value="NOM: " />
+                                    <h:outputText value="#{clientManagedBean.nom}" styleClass="outputLabel"/>
+
+                                    <h:outputText value="Prenom:  " />
+                                    <h:outputText value="#{clientManagedBean.prenom}" styleClass="outputLabel"/>
+
+                                    <h:outputText value="Numéro de Telephone " />
+                                    <h:outputText value="#{clientManagedBean.numeroTelephone}" styleClass="outputLabel"/>
+
+                                    <h:panelGrid columns="2" columnClasses="label, value">
+
+                                        <h:outputText value="Ville " />
+                                        <h:outputText value="#{clientManagedBean.adresse}" styleClass="outputLabel"/>
+                                    </h:panelGrid>
+
+                                    <h:panelGrid columns="2" columnClasses="label, value">
+                                        <h:outputText value="Email: " />
+                                        <h:outputText value="#{clientManagedBean.mail}" styleClass="outputLabel"/>
+
+
+                                    </h:panelGrid>
+                                </h:panelGrid>
+                                <p:commandButton value="Save" action="#{clientManagedBean.saveByClient()}" update="growl" process="@this"/>
+                            </h:panelGrid>
+                        </p:panel>
+                    </p:tab>
+                </p:wizard>
+
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <style type="text/css">
+    .label {
+        width:20%;
+        padding:4px;
+    }
+ 
+    .value {
+        width:80%;
+        padding:4px;
+    }
+ 
+    .grid {
+        width:100%;
+    }
+ 
+    .error {
+        color: red;
+    }
+ 
+    .outputLabel {
+        font-weight: bold;
+    }
+ 
+    .grid {
+        width:33%;
+        padding:4px;
+    }
+</style>
+    
+    <body>
+
+        <ui:composition template="./resources/defaultTemplate.xhtml">
+
+            <ui:define name="top">
+                top
+            </ui:define>
+
+
+
+            <ui:define name="left">
+                <h:form>
+                    <!-- <p:panel id="panel" header="CONNEXION" style="margin-bottom:10px;">
+                         <p:growl id="growl" showDetail="true" sticky="true" />
+                         <p:messages id="messages" />
+                         <h:panelGrid columns="3" cellpadding="5">
+
+                             <br> <p:inputText id="username" value="#{blockUIView.firstname}" required="true"  placeholder="ID-WAK">
+                                     <f:validateLength minimum="2" />
+                                 </p:inputText></br>
+                             <br/>
+
+                             <br> <p:inputText id="passw" value="#{blockUIView.firstname}" required="true"  placeholder="PASS-WAK">
+                                     <f:validateLength minimum="2" />
+                                 </p:inputText>
+                             </br>
+                             <br>
+                                  <p:selectBooleanCheckbox value="#{m}" itemLabel="sauvegarder ID-Wak"/>
+                             </br>
+
+                         </h:panelGrid>
+                         <br/>
+                         <p:commandButton action="#{m}"
+                                          value="Connexion"
+                                          update = "@([id$=growl]) @([id$=tbl]) panel"
+                                          />
+                         <br/>
+                         <h:outputLabel for="name" value="ID-Wak ou pass-wak oublié?" /><br/>
+                         <p:separator />
+                         <p:commandButton action="#{m}"
+                                          value="OUVRIR UN COMPTE"
+                                          update = "@([id$=growl]) @([id$=tbl]) panel"
+                                          />
+                         <br/>
+                     </p:panel> -->
+
+                    <p:panel id="pnl" header="CONNEXION" style="margin-bottom:10px;">
+                        <p:messages id="messages" />
+                        <h:panelGrid columns="3" cellpadding="5">
+                            <p:inputText id="username" value="#{blockUIView.username}" required="true" placeholder="ID-WAK">
+                                <f:validateLength minimum="2" />
+                            </p:inputText><br/>
+                            <p:message for="username" />
+
+                            <p:inputText id="passw" value="#{blockUIView.passw}" required="true"  placeholder="PASS-WAK">
+                                <f:validateLength minimum="2" />
+                            </p:inputText>
+                            <p:message for="passw" /><br/>
+                            <p:selectBooleanCheckbox value="#{m}" itemLabel="sauvegarder ID-Wak"/>
+                        </h:panelGrid>
+                        <p:commandButton id="connect" value="CONNEXION" icon="pi pi-check" style="margin:0" action="#{blockUIView.connexion()}" /><br/>
+                        <h:outputLabel for="name" value="ID-Wak ou pass-wak oublié?" /><br/>
+                        <p:separator />
+                        <p:commandButton id="create" value="OUVRIR UN COMPTE" icon="pi pi-check" style="margin:0" action="#{blockUIView.creerCompte}" />
+                    </p:panel>
+                </h:form>
+            </ui:define>
+
+            <ui:define name="content">
+                <p:lightBox styleClass="imagebox" id="lighbox1">  
+                   
+                    <h:outputLink value="../../resources/demo/images/nature/nature3.jpg" title="Nature 3">  
+                        <h:graphicImage name="/demo/images/nature/nature3.jpg" id="nature3" style="height: 77px; width: 100px" />  
+                    </h:outputLink>
+                    
+                    <h:outputLink value="../../resources/demo/images/nature/nature4.jpg" title="Nature 4">  
+                        <h:graphicImage name="/demo/images/nature/nature4.jpg" id="nature4" style="height: 77px; width: 100px" />  
+                    </h:outputLink>
+                </p:lightBox>
+
+                <h3>Inline</h3>
+                <p:lightBox id="lighbox2">                  
+                    <f:facet name="inline">
+                        <p:media value="https://www.boursier.com/crypto-monnaies/cours-du-bitcoin-et-des-crypto-monnaies"  width="400" height="225" player="flash" />
+                    </f:facet>
+                </p:lightBox>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
